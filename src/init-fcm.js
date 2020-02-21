@@ -1,14 +1,19 @@
 import * as firebase from "firebase/app";
 import "firebase/messaging";
 
+/**
+ * Get those settings from your firebase account.
+ */
 const initializedFirebaseApp = firebase.initializeApp({
-  messagingSenderId: "1062881024656"
+  apiKey: "apiKey",
+  appId: "appId",
+  authDomain: "authDomain",
+  databaseURL: "databaseURL",
+  messagingSenderId: "messagingSenderId",
+  projectId: "projectId",
+  storageBucket: "storageBucket"
 });
 
 const messaging = initializedFirebaseApp.messaging();
-
-messaging.usePublicVapidKey(
-  "BD6n7ebJq...rP-ytiqlsj4AcNNeQcbes"
-);
 
 export { messaging };
