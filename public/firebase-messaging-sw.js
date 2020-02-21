@@ -1,8 +1,17 @@
-importScripts("https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/5.9.4/firebase-messaging.js");
+importScripts("https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/7.9.0/firebase-messaging.js");
 
+/**
+ * Get those settings from your firebase account.
+ */
 firebase.initializeApp({
-  messagingSenderId: "1062407524656"
+  apiKey: "apiKey",
+  appId: "appId",
+  authDomain: "authDomain",
+  databaseURL: "databaseURL",
+  messagingSenderId: "messagingSenderId",
+  projectId: "projectId",
+  storageBucket: "storageBucket"
 });
 
 const messaging = firebase.messaging();
@@ -25,7 +34,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
   return promiseChain;
 });
 
-self.addEventListener('notificationclick', function(event) {
+self.addEventListener("notificationclick", function(event) {
   // do what you want
   // ...
 });
